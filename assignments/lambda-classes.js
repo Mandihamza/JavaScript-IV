@@ -61,9 +61,127 @@ class ProjectManagers extends Instructor {
     return `${this.name} announces to ${slackChannel}, @channel standup times!​​​​​`;
   }
   debugsCode(student, subject){
-    return `${ProjectManagers.name} debugs ${this.name}'s code on ${subject}.`;
+    return `${this.name} debugs ${student.name}'s code on ${subject}.`;
   }
 }
+
+//==============  Objects  ==============
+
+const katie = new Person({
+  name: 'Katie',
+  age: 26,
+  location: 'Earth',
+  gender: 'F',
+});
+
+console.log(katie.name)
+console.log(katie.age)
+console.log(katie.location)
+console.log(katie.gender)
+console.log(katie.speak());
+
+const jen = new Person({
+  name: 'Jennifer',
+  age: 29,
+  location: 'NY',
+  gender: 'F',
+});
+
+console.log(jen.name)
+console.log(jen.age)
+console.log(jen.location)
+console.log(jen.gender)
+console.log(jen.speak());
+
+const erik = new Instructor({
+  name: 'Erik',
+  location: 'Mars',
+  age: 39,
+  gender: 'M',
+  favLanguage: 'German',
+  specialty: 'Teaching',
+  catchPhrase: `Alright, alright, alright!`
+});
+
+console.log(erik.name)
+console.log(erik.location)
+console.log(erik.age)
+console.log(erik.gender)
+console.log(erik.favLanguage)
+console.log(erik.specialty)
+console.log(erik.catchPhrase)
+
+const ali = new Instructor({
+  name: 'Ali',
+  location: 'Venus',
+  age: 35,
+  gender: 'F',
+  favLanguage: 'Poetry',
+  specialty: 'Writer',
+  catchPhrase: `Ready, set, go!`
+});
+
+console.log(ali.name)
+console.log(ali.location)
+console.log(ali.age)
+console.log(ali.gender)
+console.log(ali.favLanguage)
+console.log(ali.specialty)
+console.log(ali.catchPhrase)
+
+const mandi = new Student({
+  name: 'Mandi',
+  location: 'The Internet',
+  age: 33,
+  gender: 'F',
+  previousBackground: 'Marketing',
+  className: 'WEBPT5',
+  favSubjects: ['Cooking', 'Napping', 'Twitter'],
+  grade: 1000
+});
+
+const tim = new Student({
+  name: 'Tim',
+  location: 'In motion',
+  age: 41,
+  gender: 'N',
+  previousBackground: 'Gaming',
+  className: 'WEBPT72',
+  favSubjects: ['Gaming', 'Dancing', 'Acting'],
+  grade: 9000
+});
+
+console.log(mandi.name)
+console.log(mandi.location)
+console.log(mandi.age)
+console.log(mandi.gender)
+console.log(mandi.listsSubjects('Html', 'CSS', 'JS'))
+console.log(mandi.PRAssignment('JS'))
+console.log(mandi.sprintChallenge('JS-IV'))
+console.log(mandi.favSubjects)
+
+console.log(tim.name)
+console.log(tim.location)
+console.log(tim.age)
+console.log(tim.gender)
+console.log(tim.listsSubjects('Speaking', 'Gaming', 'Dancing'))
+console.log(tim.PRAssignment('Acting'))
+console.log(tim.sprintChallenge('Sharing'))
+console.log(tim.favSubjects)
+
+
+console.log(erik.grade(mandi, 'JavaScript'));
+console.log(erik.demo('Fun, Fun, Functions'));
+console.log(ali.grade(mandi, 'Node.js'));
+console.log(ali.demo('Design'));
+
+console.log(erik.grade(tim, 'Tango'));
+console.log(ali.grade(tim, 'Poetry slam'));
+
+// console.log(erik.standUp('ASDF'));
+// console.log(erik.debugsCode(tim, 'CSS'));
+// console.log(ali.standUp('ASDF'));
+// console.log(ali.debugsCode(mandi, 'React'));
 
 //==============  Stretch Problem  ==============
 
