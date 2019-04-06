@@ -9,7 +9,7 @@ class Person {
     this.gender = attr.gender;
   }
   speak() {
-    return `Hello my ${name} is Fred, I am from ${location}`;
+    return `Hello my name is ${this.name}, I am from ${this.location}.`;
   }
 }
 
@@ -22,10 +22,10 @@ class Instructor extends Person {
     this.specialty = instructorAttr.specialty;
   }
   demo(subject){
-    return `Today we are learning about ${subject}`;
+    return `Today we are learning about ${subject}.`;
   }
   grade(student, subject){
-    return '{student.name} receives a perfect score on {subject}';
+    return `${student.name} receives a perfect score on ${subject}`;
   }
 }
 
@@ -39,13 +39,13 @@ class Student extends Person {
     this.favSubjects = studentAttr.favSubjects;
   }
   PRAssignment(subject){
-    return `${student.name} has submitted a PR for ${subject}.`;
+    return `${this.name} has submitted a PR for ${subject}.`;
   }
-  sprintChallenge(){
-    return `${student.name} has begun sprint challenge on ${subject}.`;
+  sprintChallenge(subject){
+    return `${this.name} has begun sprint challenge on ${subject}.`;
   }
   listsSubjects(){
-    return //`student's favoriteSubjects one by one`;
+    return `My favorite subjects are ${this.favSubjects}`;
   }
 }
 
@@ -56,13 +56,22 @@ class ProjectManagers extends Instructor {
     super(PMAttr);
     this.gradClassName = PMAttr.gradClassName;
     this.favInstructor = PMAttr.favInstructor;
-    this.favSubjects = PMAttr.favSubjects;
-    this.channel = PMAttr.channel; //IDK
   }
   standUp(slackChannel){
-    return `${ProjectManagers.name} announces to ${channel}, @channel standup times!​​​​​`;
+    return `${this.name} announces to ${slackChannel}, @channel standup times!​​​​​`;
   }
-  debugsCode(Student){
-    return `${ProjectManagers.name} debugs ${student.name}'s code on ${subject}.`;
+  debugsCode(student, subject){
+    return `${ProjectManagers.name} debugs ${this.name}'s code on ${subject}.`;
   }
 }
+
+//==============  Stretch Problem  ==============
+
+
+//Stretch Problem
+
+// Extend Student by adding prop => grade && set it = to a number from 1-100.
+// Build a method on Instructor  that randomly adds or subtracts points to a student's grade. use Math.random (this will be used BOTH instructors and PM's)```
+// Add a graduate method to a student.
+// This method, when called, will check the grade of the student and see if they're ready to graduate from Lambda School
+// If the student's grade is above a 70% let them graduate! Otherwise go back to grading their assignments to increase their score.
